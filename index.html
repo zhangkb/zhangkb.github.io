@@ -61,6 +61,120 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-vue 初学" class="post-vue 初学 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2017/09/20/vue 初学/">Vue 初学</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="https://zhangkb.github.io/2017/09/20/vue 初学/" data-id="cj7si1wal0002l4zzk59sujc4" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>1、创建 vue 项目。</p>
+<pre><code>好吧，我也是新手，使用vue-cli 创建了这个项目
+
+npm install -g vue-cli
+1、npm install -g vue-cli
+
+2、npm init webpack my-projecct
+
+初始化创建项目以后会有一部分需要我们自己去配置：
+
+Project name (vuetest)  项目名称，可以自己指定，也可直接回车，按照括号中
+默认名字（注意这里的名字不能有大写字母，如果有会报错Sorry, name can no
+longer contain capital letters）
+
+Project description (A Vue.js project) 项目描述，
+也可直接点击回车，使用默认名字
+
+Author (........) 作者，填写作者名字
+
+接下来会让用户选择Runtime + Compiler: recommended
+for most users 运行加编译，既然已经说了推荐，就选它了
+
+Runtime-only: about 6KB lighter min+gzip, but templates
+(or any Vue-specificHTML) are ONLY allowed in .vue files
+- render functions are required elsewhere
+- 仅运行时，已经有推荐了就选择第一个了
+
+Install vue-router? (Y/n)
+
+是否安装vue-router，这是官方的路由,输入”y“
+
+Use ESLint to lint your code? (Y/n)
+
+是否使用ESLint管理代码，ESLint是个代码风格管理工具，是用来统一代码风格的，
+
+并不会影响整体的运行，这也是为了多人协作，新手就不用了，一般项目中都会使用
+
+
+    Pick an ESLint preset (Use arrow keys)
+    选择一个ESLint预设，编写vue项目时的代码风格，因为我选择了使用ESLint
+
+    Standard (https://github.com/feross/standard)
+    标准，有些看不明白，什么标准呢，                                       去给提示的 standardgithub 地址看一下， 原来时js的标准风格
+    AirBNB (https://github.com/airbnb/JavaScript)javascript
+    最合理的方法，这个github地址说的是JavaScript最合理的方法
+    none (configure it yourself)
+    这个不用说，自己定义风格,我选择了标准风格
+
+Setup unit tests with Karma + Mocha? (Y/n)
+是否安装单元测试
+
+Setup e2e tests with Nightwatch(Y/n)? 是否安装e2e测试
+
+注：Eslint以及测试单元可以不安装，嗯就是因为我不会啊。
+    Eslint使用的是模版里的js验证规则，所以安装以
+    后就要按照这个规则去使用
+
+最后按照给出的提示，按照模块，开始运行基础的项目框架就基本上出来啦，
+剩下的就是按照自己的任务去进行工作就好啦。
+</code></pre><p>2、vue 学习。</p>
+<pre><code>class的绑定分别为直接添加与 v-bind:class 这两种。
+区别：直接添加跟普通的HTML没区别。
+    v-bind的话就可以想成是jquery中的绑定事件，当然这个
+    有其他的功能暂且不谈（我不会说我还不会）
+
+router: vue 中路由的使用也比较简单，我们安装完路由模
+以后在 router 文件夹下配置路由信息。嗯就像这样：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">import Vue from &apos;vue&apos;</div><div class="line">import Router from &apos;vue-router&apos;</div><div class="line">import Hello from &apos;@/components/Hello&apos;</div><div class="line">import Rings from &apos;@/components/Rings&apos;</div><div class="line">// 要先把你要用的模块加载进来</div><div class="line"></div><div class="line">Vue.use(Router)</div><div class="line"></div><div class="line">export default new Router(&#123;</div><div class="line">// 这里配置具体的路由信息。</div><div class="line">  routes: [</div><div class="line">    &#123;</div><div class="line">      path: &apos;/&apos;,</div><div class="line">      name: &apos;Hello&apos;,</div><div class="line">      component: Hello</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      path: &apos;/rings&apos;,</div><div class="line">      name: &apos;Rings&apos;,</div><div class="line">      component: Rings</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+
+使用的时候呢就可以通过 @click的绑定事件进行操作。
+然后路由跳转方法为：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">this.$router.push(&apos;rings&apos;)</div><div class="line">// 想要导航到不同的 URL，则使用 router.push 方法。这个方法会向 history</div><div class="line">//栈添加一个新的记录，所以，当用户点击浏览器后退按钮时，则回到之前的 URL。</div><div class="line"></div><div class="line">this.$router.push(&#123;path: &apos;/rings&apos;, replace: true&#125;)</div><div class="line">//设置 replace 属性的话，当点击时，会调用 router.replace()</div><div class="line">//而不是 router.push()，于是导航后不会留下 history 记录。即使点击返回按钮</div><div class="line">//也不会回到这个页面。</div></pre></td></tr></table></figure>
+</code></pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2017/09/20/vue 初学/">
+    <time datetime="2017-09-20T03:56:30.000Z" class="entry-date">
+        2017-09-20
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-Html手机拍照" class="post-Html手机拍照 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -76,7 +190,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://zhangkb.github.io/2017/09/20/Html手机拍照/" data-id="cj7shorbf0000gezzfhv9fkbi" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="https://zhangkb.github.io/2017/09/20/Html手机拍照/" data-id="cj7si1wae0000l4zz1a97jn19" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -159,7 +273,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://zhangkb.github.io/2017/09/20/hello-world/" data-id="cj7shorbk0001gezz146nvbfn" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="https://zhangkb.github.io/2017/09/20/hello-world/" data-id="cj7si1wai0001l4zznytci6zf" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -216,6 +330,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget-content">
       <ul>
+        
+          <li>
+            <a href="/2017/09/20/vue 初学/">Vue 初学</a>
+          </li>
         
           <li>
             <a href="/2017/09/20/Html手机拍照/">Html手机拍照</a>
