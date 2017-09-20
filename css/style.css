@@ -594,9 +594,9 @@ a:hover {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
   height: 100%;
   left: 0;
   position: fixed;
